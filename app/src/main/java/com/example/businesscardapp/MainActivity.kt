@@ -137,7 +137,7 @@ fun ContactBox(phoneNumber: String, share: String, email: String, modifier: Modi
                 verticalAlignment = Alignment.CenterVertically)
             {
                 Column (Modifier
-                    .weight(2f)
+                    .weight(1.5f)
                     .padding(end = 10.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.End){
@@ -170,7 +170,7 @@ fun ContactBox(phoneNumber: String, share: String, email: String, modifier: Modi
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically){
                 Column(Modifier
-                    .weight(2f)
+                    .weight(1.5f)
                     .padding(end = 10.dp),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.End) {
@@ -203,7 +203,7 @@ fun ContactBox(phoneNumber: String, share: String, email: String, modifier: Modi
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically){
                 Column(Modifier
-                    .weight(2f)
+                    .weight(1.5f)
                     .padding(end = 10.dp),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.End) {
@@ -281,7 +281,7 @@ fun EmailIcon(){
 @Composable
 fun AppPreview() {
     BusinessCardAppTheme {
-        MainScreen(name = "Jennifer Doe", title = "Android Developer Extraordinaire")
+        MainScreen(name = "Hello Thunder bay", title = "Android Developer Extraordinaire")
 
         ContactBox(phoneNumber = "+11 (123) 444 555 666", share = "@AndroidDev", email = "jen.doe@android.com")
     }
