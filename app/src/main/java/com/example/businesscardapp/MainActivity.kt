@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import com.example.businesscardapp.ui.theme.BusinessCardAppTheme
 
@@ -51,9 +52,12 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding), // Apply scaffold padding
                         color = Color(0xFFbfe3d0)
                     ){
-                        MainScreen(name = "Jennifer Doe", title = "Android Developer Extraordinaire")
+                        MainScreen(name = stringResource(R.string.Name), title = stringResource(R.string.Title))
 
-                        ContactBox(phoneNumber = "+11 (123) 444 555 666", share = "@AndroidDev", email = "jen.doe@android.com")
+                        ContactBox(phoneNumber = stringResource(R.string.Phone_number), share = stringResource(
+                            R.string.Share
+                        ), email = stringResource(R.string.Email)
+                        )
                     }
                 }
             }
@@ -115,11 +119,14 @@ fun MainScreen(name: String, title: String, modifier: Modifier = Modifier){
 
 @Composable
 fun ContactBox(phoneNumber: String, share: String, email: String, modifier: Modifier = Modifier){
-    Box(modifier = Modifier.fillMaxSize()
-        .padding(start = 10.dp,
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .padding(
+            start = 10.dp,
             top = 40.dp,
             end = 10.dp,
-            bottom = 40.dp),
+            bottom = 40.dp
+        ),
         contentAlignment = Alignment.BottomCenter){
         Column(
         verticalArrangement = Arrangement.Bottom,
