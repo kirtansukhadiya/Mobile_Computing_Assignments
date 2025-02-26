@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<full-backup-content>
+<full-backup-content xmlns:tools="http://schemas.android.com/tools">
     <!-- Include all files in the app's files directory -->
     <include domain="file" path="." />
 
-    <!-- Exclude specific files -->
-    <exclude domain="file" path="exclude_file1.xml" />
-    <exclude domain="file" path="exclude_file2.xml" />
+    <!-- Example: Exclude specific files -->
+    <exclude domain="file" path="example.txt" />
+    <exclude domain="file" path="example2.txt" />
+
 </full-backup-content>
-
-
-

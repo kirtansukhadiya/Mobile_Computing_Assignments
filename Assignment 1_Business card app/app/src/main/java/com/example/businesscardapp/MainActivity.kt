@@ -1,6 +1,7 @@
 package com.example.businesscardapp
 
 import android.os.Bundle
+import android.util.Log
 
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -35,15 +36,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import com.example.businesscardapp.ui.theme.BusinessCardAppTheme
+import java.io.File
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            MainScreen1()
             BusinessCardAppTheme {
                 Scaffold { innerPadding -> // Scaffold expects a lambda
                     Surface(
@@ -276,6 +281,27 @@ fun EmailIcon(){
     )
 }
 
+@Composable
+fun MainScreen1() {
+    val context = LocalContext.current
+
+    // Create the file as soon as the Composable is launched
+    LaunchedEffect(Unit) {
+        try {
+            val file = File(context.filesDir, "example.txt")
+            file.writeText("Sample data from Jetpack Compose.")
+            Log.d("FileCheck", "File created: ${file.absolutePath}")
+
+            val file2 = File(context.filesDir, "example2.txt")
+            file2.writeText("Sample data for second file.")
+            Log.d("FileCheck", "File created: ${file2.absolutePath}")
+
+        }
+        catch (e: Exception) {
+            Log.e("FileCheck", "Error creating file", e)
+        }
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
