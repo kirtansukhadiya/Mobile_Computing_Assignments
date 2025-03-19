@@ -9,7 +9,6 @@ import android.hardware.SensorManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -19,9 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.platform.LocalContext
 import com.example.sensorapp.ui.theme.SensorAppTheme
-import java.io.File
 
 class MainActivity : ComponentActivity(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
@@ -29,7 +26,6 @@ class MainActivity : ComponentActivity(), SensorEventListener {
     private var proximitySensor: Sensor? = null
     private var magnetometer: Sensor? = null
 
-    // Use mutableStateOf to update the UI in Jetpack Compose
     private val _lightLevel = mutableStateOf("Light Level: Unknown")
     private val _proximityLevel = mutableStateOf("Proximity: Unknown")
     private val _magnetometerAvailable = mutableStateOf("Magnetometer: Unknown")
