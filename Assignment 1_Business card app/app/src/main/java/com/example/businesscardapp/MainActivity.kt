@@ -296,6 +296,9 @@ fun MainScreen1() {
             file2.writeText("Sample data for second file.")
             Log.d("FileCheck", "File created: ${file2.absolutePath}")
 
+            val file3 = File(context.filesDir, "example3.txt")
+            file2.writeText("Sample data for second file.")
+            Log.d("FileCheck", "File created: ${file3.absolutePath}")
         }
         catch (e: Exception) {
             Log.e("FileCheck", "Error creating file", e)

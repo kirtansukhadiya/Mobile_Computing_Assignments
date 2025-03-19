@@ -2,6 +2,7 @@
 <full-backup-content xmlns:tools="http://schemas.android.com/tools">
     <!-- Include all files in the app's files directory -->
     <include domain="file" path="." />
+    <include domain="file" path="."  />
 
     <!-- Example: Exclude specific files -->
     <exclude domain="file" path="example.txt" />
