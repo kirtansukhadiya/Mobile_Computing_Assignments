@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.diceroller.ui.theme.DiceRollerTheme
 
@@ -42,7 +41,7 @@ class MainActivity : ComponentActivity(), SensorEventListener {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LuckyDiceApp(_lightLevel.value)
+                    Assignment3App(_lightLevel.value)
                 }
             }
         }
@@ -71,8 +70,8 @@ class MainActivity : ComponentActivity(), SensorEventListener {
 
 @Preview
 @Composable
-fun LuckyDiceApp(lightLevel: Float = 0f) {
-    RollDiceWithImage(
+fun Assignment3App(lightLevel: Float = 0f) {
+    RollDiceAndImage(
         lightLevel = lightLevel,
         modifier = Modifier
             .fillMaxSize()
@@ -81,7 +80,7 @@ fun LuckyDiceApp(lightLevel: Float = 0f) {
 }
 
 @Composable
-fun RollDiceWithImage(lightLevel: Float, modifier: Modifier = Modifier) {
+fun RollDiceAndImage(lightLevel: Float, modifier: Modifier = Modifier) {
     val diceResult = (1 + (lightLevel.toInt() % 6))
     val diceImage = when (diceResult) {
         1 -> R.drawable.dice_1
@@ -101,7 +100,7 @@ fun RollDiceWithImage(lightLevel: Float, modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = { /* Button does nothing, dice result auto-updates */ },
+            onClick = { },
         ) {
             Text(text = stringResource(R.string.roll), fontSize = 24.sp)
         }
