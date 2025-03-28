@@ -100,7 +100,7 @@ fun RollDiceAndImage(lightLevel: Float, modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = { },
+            onClick = { diceResult = 1 + (lightLevel.toInt() % 6) },
         ) {
             Text(text = stringResource(R.string.roll), fontSize = 24.sp)
         }
