@@ -81,7 +81,7 @@ fun Assignment3App(lightLevel: Float = 0f) {
 
 @Composable
 fun RollDiceAndImage(lightLevel: Float, modifier: Modifier = Modifier) {
-    val diceResult = (1 + (lightLevel.toInt() % 6))
+    var diceResult = (1 + (lightLevel.toInt() % 6))
     val diceImage = when (diceResult) {
         1 -> R.drawable.dice_1
         2 -> R.drawable.dice_2
